@@ -1,0 +1,92 @@
+  .app__header {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      flex-direction: row;
+      margin-top: -5.8rem;
+      background-color: var(--white-color);
+      // padding: 5rem .5rem 0;
+      @media screen and (min-width: 1080px) {
+          padding-top: 8rem;
+      }
+      @media screen and (min-width: 487px) and (max-width: 1079px) {
+          flex-direction: column;
+      }
+      @media screen and (max-width: 478px) {
+          padding: 6rem 0.5rem 0rem;
+      }
+  }
+  
+  .w-100 {
+      width: 100% !important;
+      height: 90vh !important;
+  }
+  
+  .item {
+      img {
+          inset: 0;
+          width: auto;
+          height: 80%;
+          object-fit: cover;
+      }
+  }
+  
+  .app__header-info {
+      flex: 0.65;
+      display: flex;
+      margin-top: -5rem;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 100%;
+      @media screen and (max-width: 1080px) {
+          width: 100%;
+      }
+      @media screen and (min-width: 487px) and (max-width: 1079px) {}
+      @media screen and (max-width: 487px) {
+          margin-top: 0rem;
+          background-size: contain;
+      }
+  }
+  
+  .app__header-badge {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      flex-direction: column;
+      .badge-cmp,
+      .tag-cmp {
+          flex-direction: row;
+          width: auto;
+          .head-text {
+              white-space: nowrap;
+              color: var(--white-color);
+              font-size: 50px;
+          }
+          .p-text {
+              font-size: 16px;
+              color: var(--white-color);
+          }
+      }
+      .tag-cmp {
+          flex-direction: column;
+          //margin-top: 3rem;
+          p {
+              width: 100%;
+              //  text-transform: uppercase;
+              text-align: left;
+              color: var(--white-color);
+          }
+      }
+      span {
+          font-size: 2.5rem;
+          @media screen and (min-width: 2000px) {
+              font-size: 5rem;
+          }
+      }
+      @media screen and (max-width: 1200px) {
+          justify-content: flex-start;
+          align-items: flex-start;
+      }
+  }
