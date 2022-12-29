@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import "../Carousel/HomeCarousels.scss";
 // import Calendar from "react-calendar";
 // import "./book.scss";
 // import "react-calendar/dist/Calendar.css";
@@ -73,7 +75,7 @@ const Header = () => {
             <img src={images.profile0} className="d-block w-100" alt="" />
           </div>
 
-          <div className="item">
+          {/* <div className="item">
          
       <video className="h-70" loop autoplay="" muted>
         <source
@@ -82,7 +84,7 @@ const Header = () => {
         />
       </video>
       
-          </div>
+          </div> */}
           <div className="item">
             <img src={images.profile1} className="d-block w-100" alt="" />
           </div>
