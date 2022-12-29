@@ -17,36 +17,41 @@ const About = () => {
       setAbouts(data);
     });
   }, []);
- 
+
   return (
     <>
-    
-      <h1 className="head-text">
-      PHOTOGRAPHY SERVICES
-      </h1>
-      <br/>
-      <br/>
+      <h1 className="head-text">PHOTOGRAPHY SERVICES</h1>
+      <h3 className="head-text">We Specialize In:</h3>
+      <br />
+
       <div className="app__about">
         <div className="app__profile">
           {abouts.map((about, index) => (
             <motion.div
-             // whileInView={{ opacity: 1 }}
-             //whileHover={{scale: 1.15}}
-             //transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-             className="app__profile-item"
-             key={index}
+              // whileInView={{ opacity: 1 }}
+              //whileHover={{scale: 1.15}}
+              //transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
+              className="app__profile-item"
+              key={index}
             >
-              <a href={about.title} rel="noreferrer">
-                <img src={urlFor(about.imgUrl)} alt={about.title} className="card-image"/>
+              <a href='gallery' rel="noreferrer">
+                <img
+                  src={urlFor(about.imgUrl)}
+                  alt={about.title}
+                  className="card-image"
+                />
+
+                <h2 className="bold-text">
+                  {about.title}
+                  <span className="arrow">&#8594;</span>
+                </h2>
+                {/* <p className="p-text" >{about.description}</p> */}
               </a>
-              <h2 className="bold-text">{about.title}</h2>
-              {/* <p className="p-text" >{about.description}</p> */}
-              
             </motion.div>
           ))}
 
-{/* 2 row if the list */}
-{/* {abouts.slice(3,5).map((about, index) => (
+          {/* 2 row if the list */}
+          {/* {abouts.slice(3,5).map((about, index) => (
             <motion.div
              // whileInView={{ opacity: 1 }}
              whileHover={{ opacity: [1, 0.5] }}
@@ -65,10 +70,9 @@ const About = () => {
               </p>
             </motion.div>
           ))} */}
-        
-
         </div>
       </div>
+      
     </>
   );
 };

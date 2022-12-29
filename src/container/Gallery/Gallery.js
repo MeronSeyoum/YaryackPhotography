@@ -7,18 +7,18 @@ import { urlFor, client } from '../../client';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-const Wedding = () => {
+const Gallery = () => {
 
   // Sanity: data retrieve from brand Schema in a form of array
-  const [wedding, setWedding] = useState([]);
+  // const [wedding, setWedding] = useState([]);
 
-  useEffect(() => {
-    const query = '*[_type == "wedding"]';
+  // useEffect(() => {
+  //   const query = '*[_type == "wedding"]';
 
-    client.fetch(query).then((data) => {
-      setWedding(data);
-    });
-  }, []);
+  //   client.fetch(query).then((data) => {
+  //     setWedding(data);
+  //   });
+  // }, []);
 
   // Gallery display selected image
   const [model, setModel] = useState(false);
@@ -29,20 +29,32 @@ const Wedding = () => {
     setModel(true);
   }
 
-  const [works, setWorks] = useState([]);
-  const [filterWork, setFilterWork] = useState([]);
+  const [galleys, setGalleys] = useState([]);
+  const [filterGalleys, setFilterGalleys] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
 
+  useEffect(() => {
+    const query = '*[_type == "gallery"]';
+
+    client.fetch(query).then((data) => {
+      setGalleys(data);
+      setFilterGalleys(data);
+    });
+
+
+
+  }, []);
+
   const handleWorkFilter = (item) => {
-      setActiveFilter(item);
-      setTimeout(() => {
-        if (item === "All") {
-          setFilterWork(works);
-        } else {
-          setFilterWork(works.filter((work) => work.tags.includes(item)));
-        }
-      }, 500);
-    };
+    setActiveFilter(item);
+    setTimeout(() => {
+      if (item === "All") {
+        setFilterGalleys(galleys);
+      } else {
+        setFilterGalleys(galleys.filter((gallery) => gallery.tags.includes(item)));
+      }
+    }, 500);
+  };
   return (
     <>
     {/** model display section for selected imaged */}
@@ -52,17 +64,16 @@ const Wedding = () => {
       </div>
 
 {/**list images will displayed in this section */}
-      <div className='app__header'>
+      {/* <div className='app__header'>
       <h4 className='head-text'>Wedding Photo for <span>Traditional</span> and <span>Modern</span></h4>
-      </div>
-      <div className="app__work-filter">
+      </div> */}
+      <div className="app__work-filter app__header">
         {[
           "Wedding",
           "Family",
-          "Engagement",
-          "Kids",
+          "Engagement", 
           "Maternity",
-          "Branding",
+          "Portrait",
           "All",
         ].map((item, index) => (
           <div
@@ -79,7 +90,7 @@ const Wedding = () => {
 
       <div className='app__gallery'>
       
-        {wedding.map((wedd, index) => {
+        {filterGalleys.map((wedd, index) => {
           return (
             <div className='pics' key={index} onClick={() => getImg(urlFor(wedd.imgUrl))}>
            <LazyLoadImage 
@@ -96,4 +107,4 @@ const Wedding = () => {
   )
 }
 
-export default Wedding
+export default Gallery

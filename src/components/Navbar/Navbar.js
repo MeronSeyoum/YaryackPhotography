@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="app__navbar">
         <div className="app__navbar-logo">
             <a href= '/'>
-        <img src = { images.logo }  alt='Yared Yacob' /> 
+        <img src = { images.logo }  alt='Yaryack Photography' /> 
         </a>
         </div> 
         <ul className="app__navbar-links">

@@ -4,6 +4,13 @@
     flex-direction: column;
 }
 
+h3.head-text {
+    white-space: nowrap;
+    color: var(--white-black);
+    font-size: 20px;
+    margin-top: -2rem;
+}
+
 .app__profile {
     display: flex;
     justify-content: center;
@@ -40,9 +47,15 @@
         position: absolute;
         left: 15px;
         bottom: 15px;
-        font-size: 16px;
+        font-size: 22px;
+        font-weight: 500;
+        font-family: 'TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif';
         color: #fff;
         text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+    .arrow {
+        width: 0%;
+        float: right;
     }
     .p-text {
         position: absolute;

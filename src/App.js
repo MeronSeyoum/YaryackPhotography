@@ -9,13 +9,13 @@ import {
   Skills,
   Testimonials,
   Works,
-  Wedding,
-  Maternity,
-  Kids,
-  Branding,
-  Engagement,
-  HomeCarousels,
-  PhotoCategory,
+  Gallery,
+  // Maternity,
+  // Kids,
+  // Branding,
+  // Engagement,
+  // HomeCarousels,
+  // PhotoCategory,
 } from "./container";
 import { Navbar } from "./components";
 import "./App.scss";
@@ -38,13 +38,13 @@ const App = () => {
             </>
           }
         />
-        <Route path="family" element={<Family />} />
+        {/* <Route path="family" element={<Family />} />
         <Route path="engagement" element={<Engagement />} />
-        <Route path="kids" element={<Kids />} />
-        <Route path="wedding" element={<Wedding />} />
-        <Route path="maternity" element={<Maternity />} />
+        <Route path="kids" element={<Kids />} /> */}
+        <Route path="gallery" element={<Gallery />} />
+        {/* <Route path="maternity" element={<Maternity />} />
         <Route path="branding" element={<Branding />} />
-        <Route path="PhotoCategory" element={<PhotoCategory />} />
+        <Route path="PhotoCategory" element={<PhotoCategory />} /> */}
       </Routes>
       <Footer />
     </div>

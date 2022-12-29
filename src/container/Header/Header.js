@@ -75,7 +75,7 @@ const Header = () => {
 
           <div className="item">
          
-      <video className="" loop autoplay="" muted>
+      <video className="h-70" loop autoplay="" muted>
         <source
           src="https://mdbcdn.b-cdn.net/img/video/Agua-natural.mp4"
           type="video/mp4"
