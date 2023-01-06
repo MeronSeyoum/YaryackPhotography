@@ -2,77 +2,77 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 //import ResizeImage from 'react-resize-image'
 //import { AiFillEye } from 'react-icons/ai';
-
 import { AppWrap, MotionWrap } from "../../wrapper";
 import "./About.scss";
 import { urlFor, client } from "../../client";
 
 const About = () => {
-  const [abouts, setAbouts] = useState([]);
+  const [about, setAbout] = useState([]);
 
   useEffect(() => {
     const query = '*[_type == "abouts"]';
 
     client.fetch(query).then((data) => {
-      setAbouts(data);
+      setAbout(data);
     });
   }, []);
 
+
+
+
+  const [showMore, setShowMore] = useState(false);
   return (
     <>
-      <h1 className="head-text">PHOTOGRAPHY SERVICES</h1>
-      <h3 className="head-text">We Specialize In:</h3>
+     
+      <div className="counters"></div>
+      <h1 className="head-text">Photography <span>Services</span></h1>
+      <p className="head-text">
+        We all want to keep the good memories as long as we can. With a
+        photograph, we can do that. love helping people record the heart of
+        their moments.
+      </p>
       <br />
 
       <div className="app__about">
         <div className="app__profile">
-          {abouts.map((about, index) => (
-            <motion.div
-              // whileInView={{ opacity: 1 }}
-              //whileHover={{scale: 1.15}}
-              //transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-              className="app__profile-item"
-              key={index}
-            >
-              <a href='gallery' rel="noreferrer">
-                <img
-                  src={urlFor(about.imgUrl)}
-                  alt={about.title}
-                  className="card-image"
-                />
+          {about.map((about, index) => (
+            
 
-                <h2 className="bold-text">
-                  {about.title}
-                  <span className="arrow">&#8594;</span>
-                </h2>
-                {/* <p className="p-text" >{about.description}</p> */}
-              </a>
-            </motion.div>
+            <div class="card" >
+               <motion.div
+                // whileInView={{ opacity: 1 }}
+                //whileHover={{scale: 1.15}}
+                //transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
+                className="app__profile-item"
+                key={index}
+              >
+                 <a href="gallery" rel="noreferrer">
+              <img
+                    src={urlFor(about.imgUrl)}
+                    alt={about.title}
+                    className="card-image card-img-top"
+                  />
+                  <h2 className="bold-text">
+                    {about.title}
+                    <span className="arrow">&#8594;</span>
+                  </h2></a>
+ </motion.div>
+  <div class="card-body">
+    {/* <h5 class="card-title">Card title</h5> */}
+
+
+    <p class="card-text p-text box"> {showMore ? about.description : `${about.description.substring(0, 100)}`}
+    <button class="btn-primary " onClick={() => setShowMore(!showMore)}>
+    {showMore ? "Show less" : "Show more"}
+    </button></p>
+  </div>
+</div>
+            
+              
+          
           ))}
-
-          {/* 2 row if the list */}
-          {/* {abouts.slice(3,5).map((about, index) => (
-            <motion.div
-             // whileInView={{ opacity: 1 }}
-             whileHover={{ opacity: [1, 0.5] }}
-             transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-              className="app__profile-itemTwoCol"
-              key={about.title + index}
-            >
-              <a href={about.title} rel="noreferrer">
-                <img src={urlFor(about.imgUrl)} alt={about.title} />              
-              </a>
-              <h2 className="bold-text" >
-                {about.title}
-              </h2>
-              <p className="p-text" style={{ marginTop: 5 }}>
-                {about.description}
-              </p>
-            </motion.div>
-          ))} */}
         </div>
       </div>
-      
     </>
   );
 };

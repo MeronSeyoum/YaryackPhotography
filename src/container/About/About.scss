@@ -1,112 +1,132 @@
-.app__about {
-    flex: 1;
-    width: 100%;
-    flex-direction: column;
-}
-
-h3.head-text {
-    white-space: nowrap;
-    color: var(--white-black);
-    font-size: 20px;
-    margin-top: -2rem;
-}
-
-.app__profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-}
-
-.app__profile-item:hover .card-image {
-    transform: scale(1.15);
-}
-
-.app__profile-item {
-    margin: 1rem;
-    width: 250px;
-    height: 350px;
-    background-color: #333;
-    border-radius: 0px;
-    outline: 1px solid rgba(255, 255, 255, 0.5);
-    outline-offset: -8px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-    img {
-        position: absolute;
-        inset: 0;
+    .app__about {
+        flex: 1;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.6;
-        transition: transform 0.75s;
+        flex-direction: column;
+        margin-bottom: 6rem;
     }
-    .bold-text {
-        position: absolute;
-        left: 15px;
-        bottom: 15px;
-        font-size: 22px;
-        font-weight: 500;
-        font-family: 'TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif';
-        color: #fff;
-        text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    
+    .counters {
+        margin-top: 25rem;
     }
-    .arrow {
-        width: 0%;
-        float: right;
+    
+    .card {
+        width: 30rem;
+        margin: 0;
     }
+    
+    p.head-text {
+        // white-space: nowrap;
+        color: var(--white-black);
+        font-size: 18px;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        inline-size: 750px;
+        overflow-wrap: break-word;
+    }
+    
+    .app__profile {
+        display: flex;
+        // justify-content: center;
+        // align-items: center;
+        flex-wrap: wrap;
+        // margin-top: 1rem;
+        // display: grid;
+        // grid-template-columns: repeat(5, auto);
+        // grid-gap: 20px;
+    }
+    
+    .app__profile-item:hover .card-image {
+        transform: scale(1.15);
+    }
+    
+    .app__profile-item {
+        margin: 1rem;
+        width: 250px;
+        height: 350px;
+        background-color: #333;
+        border-radius: 0px;
+        outline: 1px solid rgba(255, 255, 255, 0.5);
+        outline-offset: -8px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+        img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: transform 0.75s;
+        }
+        .bold-text {
+            position: absolute;
+            left: 15px;
+            bottom: 15px;
+            font-size: 22px;
+            font-weight: 500;
+            font-family: 'TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif';
+            color: #fff;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+        }
+        .arrow {
+            width: 0%;
+            float: right;
+        }
+        .btn-primary {
+            margin-left: 1rem;
+        }
+        @media screen and (min-width: 2000px) {
+            width: 370px;
+            margin: 2rem 4rem;
+            img {
+                height: 320px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            width: 390px;
+            margin: 1rem 0.5rem;
+            img {
+                height: 350px;
+            }
+            .card {
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+    
     .p-text {
-        position: absolute;
-        left: 15px;
-        bottom: 30px;
         font-size: 16px;
-        color: #fff;
-        text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+        color: rgb(21, 21, 21);
+        // text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
     }
-    @media screen and (min-width: 2000px) {
-        width: 370px;
-        margin: 2rem 4rem;
-        img {
-            height: 320px;
+    
+    .box {
+        padding: 10px;
+        inline-size: 280px;
+        overflow-wrap: break-word;
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: black;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .box {
+            margin-left: 0rem;
+            padding: 10px;
+            inline-size: 400px;
+            overflow-wrap: break-word;
+            font-family: "Poppins", sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+        p.head-text {
+            inline-size: 350px;
+            margin-left: 30px;
+        }
+        .counters {
+            margin-top: 5rem;
         }
     }
-    @media screen and (max-width: 480px) {
-        width: 470px;
-        // margin: 2rem 4rem;
-        img {
-            height: 350px;
-        }
-    }
-}
-
-.app__profile-itemTwoCol {
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 1rem;
-    img {
-        width: 600px;
-        height: 200px;
-        //border-radius: 15px;
-        object-fit: cover;
-    }
-    @media screen and (min-width: 2000px) {
-        width: 370px;
-        // margin: 2rem 4rem;
-        img {
-            height: 350px;
-        }
-    }
-    @media screen and (max-width: 480px) {
-        width: 400px;
-        //margin: 2rem 4rem;
-        img {
-            //n width: 400px;
-            height: 200px;
-        }
-    }
-}

@@ -1,0 +1,84 @@
+.wrapper {
+    position: absolute;
+    width: 80vw;
+    transform: translate(-50%, -50%);
+    top: 98%;
+    left: 50%;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 30px rgb(0 0 0 / 10%);
+}
+
+.counter {
+    width: 28vmin;
+    height: 28vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1em 0;
+    position: relative;
+    font-size: 16px;
+    border-bottom: 10px solid #18f990c2;
+}
+
+i {
+    color: #36454F;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+span.num {
+    color: #020202;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 3em;
+}
+
+span.text {
+    color: #000000;
+    font-size: 1em;
+    text-align: center;
+    pad: 0.7em 0;
+    font-weight: 400;
+    line-height: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        width: 85vw;
+        margin-top: 5rem;
+    }
+    .counter {
+        height: 26vmin;
+        width: 26vmin;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 90vw;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .counter {
+        width: calc(50% - 40px);
+        height: 30vmin;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+        top: 83%;
+        gap: 15px;
+    }
+    .counter {
+        width: 20%;
+        height: 28vmin;
+        font-size: 10px;
+    }
+}

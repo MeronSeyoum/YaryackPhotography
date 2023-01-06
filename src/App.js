@@ -1,23 +1,20 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
+import 'react-multi-carousel/lib/styles.css';
 import {
+  Header,
   About,
   Footer,
-  Family,
-  Header,
   Skills,
   Testimonials,
   Works,
   Gallery,
-  // Maternity,
-  // Kids,
-  // Branding,
-  // Engagement,
-  // HomeCarousels,
-  // PhotoCategory,
+  VideoPlayer,
+  Counter,
 } from "./container";
 import { Navbar } from "./components";
+import { SocialMediaPhone } from "./components";
+
 import "./App.scss";
 
 const App = () => {
@@ -29,24 +26,21 @@ const App = () => {
           path="/"
           element={
             <>
-              {/* <HomeCarousels /> */}
-            <Header /> 
-             <About />  
+              <Header />
+              <Counter />
+              <About />
               <Works />
               <Testimonials />
-              <Skills />
+              {/* <Skills /> */}
+              <VideoPlayer />
             </>
           }
         />
-        {/* <Route path="family" element={<Family />} />
-        <Route path="engagement" element={<Engagement />} />
-        <Route path="kids" element={<Kids />} /> */}
+
         <Route path="gallery" element={<Gallery />} />
-        {/* <Route path="maternity" element={<Maternity />} />
-        <Route path="branding" element={<Branding />} />
-        <Route path="PhotoCategory" element={<PhotoCategory />} /> */}
       </Routes>
       <Footer />
+      <SocialMediaPhone />.
     </div>
   );
 };

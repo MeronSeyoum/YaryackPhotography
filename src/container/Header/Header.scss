@@ -13,6 +13,7 @@
           flex-direction: column;
       }
       @media screen and (max-width: 478px) {
+          margin-top: -4.2rem;
           padding: 6rem 0.5rem 0rem;
       }
   }
@@ -88,5 +89,16 @@
       @media screen and (max-width: 1200px) {
           justify-content: flex-start;
           align-items: flex-start;
+      }
+  }
+  
+  .item {
+      @media screen and (min-width: 487px) and (max-width: 1079px) {}
+      @media screen and (max-width: 487px) {
+          margin-top: 0rem;
+          background-size: contain;
+          img {
+              object-fit: cover;
+          }
       }
   }

@@ -17,16 +17,20 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
 `
-const url =
-  'https://www.instagram.com/graphql/query/?query_hash=42323d64886122307be10013ad2dcc44&variables={"id":40346689,"first":6}';
+const accessToken = 'IGQVJWZA1FTV3N4STktZA2RHR1owalJTNllic1BJYVpXUnNRMnF1eXNPRDNIRjgwdzRpSVRZANDVRRDZAWdy1BMV85TkpVWkdtZAlRTR3I5RUVCWFdCOUdvSEtLU0RCU1Fna1ZAwbHFEaHNHUVFJc29aSVhpdgZDZD';
+const userId = '4551080094';
+const count = 3;
+
+const url =`https://graph.instagram.com/v7.0/users/${userId}/media/recent?access_token=${accessToken}&count=${count}`
+  // 'https://www.instagram.com/graphql/query/?query_hash=42323d64886122307be10013ad2dcc44&variables={"id":4551080094,"first":6}';
 const Skills = () => {
   
- 
   const [insta, setInsta] = useState([]);
   useEffect(() => {
     fetch(url)
       .then((data) => data.json())
       .then((data) => {
+        console.log(data)
         const photosArray = data.data.user.edge_owner_to_timeline_media.edges;
         setInsta(photosArray);
       });
