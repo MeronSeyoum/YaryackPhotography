@@ -1,7 +1,8 @@
 .app {
     background-color: var(--white-color);
     font-family: var(--font-base);
-    margin-top: 4rem;
+    overflow: hidden;
+    // margin-top: 4rem;
 }
 
 .app__whitebg {
@@ -23,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
         display: block;
     }
 }
@@ -33,7 +34,8 @@
     width: 100%;
     flex-direction: column;
     padding: 0rem 2rem;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
+        width: 90%;
         padding: 4rem 1rem 2rem;
     }
 }
@@ -64,7 +66,7 @@
     @media screen and (min-width: 2000px) {
         font-size: 4rem;
     }
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 768px) {
         font-size: 2rem;
     }
 }
@@ -89,6 +91,22 @@
     }
     @media screen and (max-width: 450px) {
         font-size: 0.9rem;
+    }
+}
+
+.counters {
+    padding-top: 20px;
+    border-bottom: 4px solid currentColor;
+    width: 70%;
+    margin-left: 15%;
+}
+
+@media screen and (max-width: 768px) {
+    .counters {
+        padding-top: 10px;
+        border-bottom: 4px solid currentColor;
+        width: 30%;
+        margin-left: 37%;
     }
 }
 
@@ -160,7 +178,7 @@
     display: none;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
     .app__navigation,
     .app__social {
         display: none;
@@ -176,8 +194,8 @@
             height: 40px;
             border-radius: 50%;
             background-color: var(--white-color);
-            margin: 0.25rem 0;
-            border: 1px solid var(--lightGray-color);
+            margin: 0.25rem 1rem;
+            border: 1px solid var(--black-color);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -206,7 +224,7 @@
         }
     }
     .copyright {
-        padding: 2rem;
+        padding: 6rem 2rem 0rem 2rem;
     }
 }
 

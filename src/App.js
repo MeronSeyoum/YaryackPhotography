@@ -5,14 +5,14 @@ import {
   Header,
   About,
   Footer,
-  Skills,
+  Footer2,
+  // GalleryModel,
   Testimonials,
-  Works,
+  Project,
   Gallery,
   VideoPlayer,
   Counter,
 } from "./container";
-import { Navbar } from "./components";
 import { SocialMediaPhone } from "./components";
 
 import "./App.scss";
@@ -20,27 +20,31 @@ import "./App.scss";
 const App = () => {
   return (
     <div className="app">
-      <Navbar />
+    
       <Routes>
         <Route
           path="/"
           element={
             <>
               <Header />
-              <Counter />
+              
               <About />
-              <Works />
+               <Project />
+               <Counter />
+             
               <Testimonials />
-              {/* <Skills /> */}
+              {/* <GalleryModel /> */}
               <VideoPlayer />
             </>
           }
         />
 
         <Route path="gallery" element={<Gallery />} />
+        <Route path="/gallery/:id" element={<Gallery />} />
       </Routes>
       <Footer />
-      <SocialMediaPhone />.
+      <Footer2 />
+      <SocialMediaPhone />
     </div>
   );
 };
